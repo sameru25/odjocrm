@@ -411,7 +411,7 @@ def process_user_input(input_text):
             {"role": "system",
              "content": "You are a helpful assistant that identifies roles, related job titles, and industries from user input."},
             {"role": "user", "content": f"""
-            Analyze this request: '{input_text}'.
+            Analyse this request: '{input_text}'.
             1. Identify the primary role(s) mentioned.
             2. Suggest 1-3 related job titles.
             3. Specify the industry associated with these roles.
@@ -1072,7 +1072,7 @@ else:
             st.header(f"Step 2: Define Your Service and Audience, {st.session_state['username']}")
 
             st.session_state["service"] = st.text_input(
-                "Describe your service: (e.g., Graphic Designer specializing in logos)",
+                "Describe your service: (e.g., Graphic Designer specialising in logos)",
                 st.session_state.get("service", "")
             )
             st.session_state["audience"] = st.text_input(
@@ -1260,7 +1260,7 @@ else:
             num_results = st.slider("Number of results to fetch:", 1, 10, 5)
 
             if st.button("Search Demand"):
-                with st.spinner("Analyzing market demand..."):
+                with st.spinner("Analysing market demand..."):
                     # Search Mumsnet
                     mumsnet_results = google_custom_search(
                         f'site:mumsnet.com "{service_input}"',
@@ -1377,7 +1377,7 @@ else:
         if search_type == "Specific companies":
             specific_companies = st.text_input("Enter company names (separate by comma):")
 
-        if st.button("1. Analyze"):
+        if st.button("1. Analyse"):
             response = process_user_input(input_text)
             if response:
                 roles, titles, industry = extract_roles_and_industry(response)
@@ -1397,7 +1397,7 @@ else:
 
         if st.button("2. Search"):
             if "roles" not in st.session_state or not st.session_state.get("roles"):
-                st.warning("Please analyze first")
+                st.warning("Please analyse first")
             else:
                 roles = st.session_state.get("roles", [])
                 city = st.session_state.get("city", None)
@@ -1770,9 +1770,9 @@ else:
 
                 with col1:
                     st.metric("Total Leads", metrics['Total Leads']['value'], metrics['Total Leads']['trend'])
-                    if st.button("📊 Analyze Leads"):
-                        with st.spinner("Analyzing lead data..."):
-                            prompt = """Analyze this lead data and provide actionable insights:
+                    if st.button("📊 Analyse Leads"):
+                        with st.spinner("Analysing lead data..."):
+                            prompt = """Analyse this lead data and provide actionable insights:
                             - Total Leads: 150 (+12% this month)
                             - Current sources: Direct search, Referrals, Social Media
                             - Industry breakdown: Tech (40%), Services (35%), Retail (25%)
@@ -1795,8 +1795,8 @@ else:
                 with col2:
                     st.metric("Open Rate", metrics['Open Rate']['value'], metrics['Open Rate']['trend'])
                     if st.button("📧 Improve Open Rates"):
-                        with st.spinner("Analyzing email performance..."):
-                            prompt = """Analyze this email performance data and provide specific improvements:
+                        with st.spinner("Analysing email performance..."):
+                            prompt = """Analyse this email performance data and provide specific improvements:
                             - Current open rate: 45% (-3% vs last month)
                             - Current subject line average length: 8 words
                             - Most common send time: 10am local time
@@ -1820,8 +1820,8 @@ else:
                 with col3:
                     st.metric("Reply Rate", metrics['Reply Rate']['value'], metrics['Reply Rate']['trend'])
                     if st.button("💬 Boost Replies"):
-                        with st.spinner("Analyzing reply patterns..."):
-                            prompt = """Analyze this email engagement data and provide improvements:
+                        with st.spinner("Analysing reply patterns..."):
+                            prompt = """Analyse this email engagement data and provide improvements:
                             - Current reply rate: 22% (+5% vs last month)
                             - Average email length: 180 words
                             - Call-to-action placement: Bottom of email
@@ -1846,8 +1846,8 @@ else:
                     st.metric("Conversion Rate", metrics['Conversion Rate']['value'],
                               metrics['Conversion Rate']['trend'])
                     if st.button("🎯 Optimise Conversions"):
-                        with st.spinner("Analyzing conversion patterns..."):
-                            prompt = """Analyze this conversion data and provide strategic improvements:
+                        with st.spinner("Analysing conversion patterns..."):
+                            prompt = """Analyse this conversion data and provide strategic improvements:
                             - Current conversion rate: 8% (+1% vs last month)
                             - Average sales cycle: 14 days
                             - Top converting channels: Direct (45%), Email (35%), Social (20%)
