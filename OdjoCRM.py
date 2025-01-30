@@ -857,12 +857,13 @@ with container:
         """, unsafe_allow_html=True)
         
         if os.path.exists(logo_path):
-            st.image(logo_path, width=90, caption=None)  # Added caption=None to remove any text
+            st.image(logo_path, width=90, caption=None)
+        else:
+            st.error(f"Logo not found. Please ensure it exists in the static folder.")
     with cols[1]:
         st.title("")
-    # Empty column for spacing
     with cols[2]:
-        st.write("")  # Changed to empty string to remove the "0"
+        st.write("")
 
 # Custom styling
 st.markdown("""
